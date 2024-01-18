@@ -1,0 +1,14 @@
+.home{
+    background-image: url("https://media.istockphoto.com/id/917911572/photo/standing-woman-on-the-hill-against-mountain-valley-at-bright-sunny-day-landscape-with-girl.jpg?s=1024x1024&w=is&k=20&c=CdAO7r8O3xWGG_v3aqJCCEWwQTRG2PIvZqyZS0933T0=");
+    height: 100vh;
+    width: 100vw;
+    
+}
+.navbar{
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+   opacity: 0.5;
+   
+  }

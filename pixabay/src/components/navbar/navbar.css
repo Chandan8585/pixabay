@@ -1,0 +1,14 @@
+.navigation{
+    width: 80%;
+    height: 10%;
+    border: 2px solid white;
+  background-color: white;
+  opacity: 0.4;
+  display: flex;
+  justify-content: space-between;
+}
+
+.authentication{
+    display: flex;
+    
+}
