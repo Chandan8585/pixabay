@@ -1,12 +1,33 @@
 .navigation{
-    width: 80%;
-    height: 10%;
-    border: 2px solid white;
+    width: 1217px;
+    height: 68px;
   background-color: white;
-  opacity: 0.4;
   display: flex;
   justify-content: space-between;
+  /* background-color: black; */
+  background-color: #d9d9d91d;
+
+  border-radius: 8.91px;
+  box-shadow: inset -3.94px 3.94px 3.94px #ffffff6e, inset 3.94px -3.94px 3.94px #b6b6b66e;
+   padding: 1%;
+   align-items: center;
 }
+.logo, .login, .sign_up{
+    color: #ffffff;
+    font-family: "Euclid Circular B-SemiBold", Helvetica;
+    font-size: 17.8px;
+    font-weight: 600;
+    height: 20px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 19.9px;
+    /* position: fixed; */
+    top: 0;
+    white-space: nowrap;
+  }
+  .login, .sign_up{
+    margin-left: 1rem;
+  }
 
 .authentication{
     display: flex;

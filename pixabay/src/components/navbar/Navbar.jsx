@@ -8,7 +8,7 @@ const Navbar = () => {
             <div className='login'>
                 Login
             </div>
-            <div className='Create Account'>
+            <div className='sign_up'>
                 Create Account
             </div>
          </div>
