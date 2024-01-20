@@ -41,5 +41,18 @@ font-size: 1rem;
     margin-left :10px;
     /* opacity: 0.2; */
     box-shadow: inset -3.94px 3.94px 3.94px, inset 3.94px -3.94px 3.94px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
 
+
+
+.search_btn:hover {
+transform: scale(1);
+background-color: white;
+color: black;
+}
+
+.search_btn:active {
+transform: scale(0.8);
 }
