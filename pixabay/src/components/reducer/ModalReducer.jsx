@@ -5,6 +5,16 @@ const ModalReducer = (state, {type, payload})=> {
         ...state,
         isModalOpen: true,
       }
+      case "MODAL_CLOSE": 
+      return{
+        ...state,
+        isModalOpen: false
+      }
+     case "IMAGE_URL": 
+     return{
+        ...state,
+        modalImgID: payload
+     }
       default: 
       return state
    }
