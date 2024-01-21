@@ -2,7 +2,7 @@
 
 # Pixabay 
  <img src="./src/assets/homepage_img.png" alt="App Screenshot" width="200" background-color="#fff"/>
-
+.
 A travel app that helps you discover Your Home Away From Home: The Ultimate Travel App for Seamless Rental Accommodation in your budget.Pixabay App suggests you the best stays and enjoy your trip with range of best hotel and that too in budget prices, add your favourite hotel to wishlist can search your hotel category wise also provides gateway for instant payment to book your hotel.
 
 ## Features
