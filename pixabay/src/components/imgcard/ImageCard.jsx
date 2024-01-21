@@ -19,9 +19,11 @@ const ImageCard = ({image}) => {
   return (
     <div className="image-card" onClick={()=>handleModalClick(image.id)}>
     <img src={largeImageURL} alt="Sample_Image" className='image'/>
-    <div className="tags" >
-        <span>{tags}</span>
-    </div>
+    <div className="tags">
+        {tags.split(',').map((tag, index) => (
+          <span key={index} className="tag">{tag.trim()}</span>
+        ))}
+      </div>
   </div>
   )
 }

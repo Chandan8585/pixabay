@@ -33,3 +33,9 @@
     display: flex;
     
 }
+
+.user_logout{
+  display: flex;
+  color: white;
+  font-weight: 500;
+}

@@ -82,6 +82,30 @@ const ImageModal = ({ imageUrl, altText, onClose }) => {
             </div>
             <div className='image_information'>
               <p className='container_heading'>Information</p>
+              <div className='image_info'>
+                 <p className='img_info_heading'>User</p>
+                 <p className='img_info_response'>{imgDetails?.user}</p>
+              </div>
+              <div className='image_info'>
+                 <p className='img_info_heading'>User</p>
+                 <p className='img_info_response'>{imgDetails?.likes}</p>
+              </div>
+              <div className='image_info'>
+                 <p className='img_info_heading'>User</p>
+                 <p className='img_info_response'>{imgDetails?.user}</p>
+              </div>
+              <div className='image_info'>
+                 <p className='img_info_heading'>User</p>
+                 <p className='img_info_response'>{imgDetails?.user}</p>
+              </div>
+              <div className='image_info'>
+                 <p className='img_info_heading'>User</p>
+                 <p className='img_info_response'>{imgDetails?.user}</p>
+              </div>
+              <div className='image_info'>
+                 <p className='img_info_heading'>User</p>
+                 <p className='img_info_response'>{imgDetails?.user}</p>
+              </div>
             </div>
           </section>
         </section>

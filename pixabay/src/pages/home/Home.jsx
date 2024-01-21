@@ -3,11 +3,10 @@ import Navbar from '../../components/navbar/Navbar';
 import "./home.css";
 import mainImg from "../../assets/homepage_img.png";
 import SearchBar from '../../components/searchBar/SearchBar';
-
 import ImageCard from '../../components/imgcard/ImageCard';
 import { useModal } from '../../components/context/ModalContext';
 import ImageModal from '../../components/imgModal/ImageModal';
-import useFetch from '../../customhooks/useFetch';
+import useFetch from '../../components/customhooks/useFetch';
 
 const Home = () => {
   const {isModalOpen, modalDispatch} = useModal();
@@ -22,7 +21,7 @@ const Home = () => {
       <Navbar/>
       </div>
       
-      <h1 className='heading'> Discover over 2,000,000 <br />
+      <h1 className='head'> Discover over 2,000,000 <br />
         free Stock Images</h1>
 
         <div className='search_section'>

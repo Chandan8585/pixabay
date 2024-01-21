@@ -1,0 +1,36 @@
+@import url("https://uilight.netlify.app/main.css");
+
+:root {
+  --bg-color: #3C3D3B;
+  --primary-color: #11cb62;
+  --secondary-color: #E4F9F5;
+  --accent-color:  #4A4B49;
+  --text-color-primary: #11999E;
+  --green-badge: black;
+}
+
+body {
+  background-color: var(--bg-color);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.icon{
+  border-radius: 50%;
+  height: 5rem;
+  width: 5rem;
+}
+.head-navbar{
+  background-color: #fff ;
+  height: 5rem;
+  width: 100%;
+}
+.loading{
+  color: white;
+  height: 10rem;
+  width: 60rem;
+}
+.material-icons-outlined{
+  color: #FA7020;
+  background-color: #fff;
+}

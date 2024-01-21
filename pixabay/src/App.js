@@ -5,6 +5,8 @@ import Footer from './components/footer/Footer';
 import {  Routes, Route } from 'react-router-dom';
 import SearchPage from './pages/searchpage/SearchPage';
 import PageNotFound from './pages/pagenotfound/PageNotFound';
+import Login from './pages/auth/Login';
+import Signup from './pages/auth/SignUp';
 
 
 function App() {
@@ -12,8 +14,11 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/search/:q" element={<SearchPage/>} />
+        <Route path='/Search' element={<SearchPage/>}/>
+        <Route path="/search/:_id" element={<SearchPage/>} />
         <Route path="*" element={<PageNotFound/>} />
+        <Route path='/login' element={<Login/>} />
+        <Route path='/signup' element={<Signup/>} />
       </Routes>
     <Footer/>
     </div>
