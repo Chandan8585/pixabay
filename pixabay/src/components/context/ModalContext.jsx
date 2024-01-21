@@ -2,14 +2,15 @@ import React, { createContext, useContext, useReducer } from 'react'
 import ModalReducer from '../reducer/ModalReducer';
 
 const initialValue = {
-  isModalOpen: true,
+  isModalOpen: false,
+  modalImgID : ""
 }
 const ModalContext = createContext(initialValue);
 
 const ModalProvider = ({children})=>{
-    const [{isModalOpen}, modalDispatch] = useReducer(ModalReducer, initialValue);
+    const [{isModalOpen , modalImgID}, modalDispatch] = useReducer(ModalReducer, initialValue);
   return(
-    <ModalContext.Provider value={{isModalOpen, modalDispatch}}>
+    <ModalContext.Provider value={{isModalOpen,modalImgID, modalDispatch}}>
         {children}
     </ModalContext.Provider>
   )

@@ -1,17 +1,26 @@
 import React from 'react'
 import "./imgcard.css";
+import { useModal } from '../context/ModalContext';
+ 
 const ImageCard = ({image}) => {
-    const {largeImageURL, tags} = image
+    const {largeImageURL, tags} = image;
+    const { modalDispatch} = useModal();
+
+    const handleModalClick = (imgID)=> {
+        modalDispatch({
+          type: "IMAGE_URL",
+          payload: imgID
+        })
+        modalDispatch({
+          type: "MODAL_OPEN"
+        })
+       
+       }
   return (
-    <div className="image-card">
+    <div className="image-card" onClick={()=>handleModalClick(image.id)}>
     <img src={largeImageURL} alt="Sample_Image" className='image'/>
-    <div className="tags">
+    <div className="tags" >
         <span>{tags}</span>
-      {/* {tags.map((tag, index) => (
-        <span key={index} className="tag">
-          {tag}
-        </span>
-      ))} */}
     </div>
   </div>
   )
