@@ -7,6 +7,7 @@ import ImageCard from '../../components/imgcard/ImageCard';
 import { useModal } from '../../components/context/ModalContext';
 import ImageModal from '../../components/imgModal/ImageModal';
 import useFetch from '../../components/customhooks/useFetch';
+import CarouselContainer from '../../components/carousel/CarouselContainer';
 
 const Home = () => {
   const {isModalOpen, modalDispatch} = useModal();
@@ -26,6 +27,9 @@ const Home = () => {
 
         <div className='search_section'>
         <SearchBar/>
+        </div>
+        <div className='carousel_container'>
+          <CarouselContainer/>
         </div>
         <section className='image_section'>
          { 

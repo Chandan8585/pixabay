@@ -50,3 +50,11 @@
     justify-content: center;
     flex-wrap: wrap;
   }
+
+ .carousel_container{
+    width: 100vh;
+    
+    margin-left: 23rem;
+  }
+
+  

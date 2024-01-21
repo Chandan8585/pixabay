@@ -8,7 +8,7 @@ const ImageModal = ({ imageUrl, altText, onClose }) => {
   const [selectedSize, setSelectedSize] = useState('medium'); // Default size is medium
   const [imgDetails , setImageDetails] = useState([]);
   const {modalImgID, modalDispatch} = useModal();
-
+ const {webformatURL} = imgDetails
    useEffect(()=> {
     const generateModalDetails = async()=> {
         try {
@@ -25,11 +25,32 @@ const ImageModal = ({ imageUrl, altText, onClose }) => {
 
   const handleSizeChange = (size) => {
     setSelectedSize(size);
+
   };
-  const handleDownload = () => {
+  const handleDownload = (e) => {
     // Here, you can implement the logic for downloading the selected size of the image.
     // For simplicity, let's log the selected size to the console.
-    console.log(`Downloading ${selectedSize} image: ${imageUrl}`);
+    // console.log(`Downloading ${selectedSize} image: ${imageUrl}`);
+    // const download = (e) => {
+        console.log(e.target.href);
+        fetch(e.target.href, {
+          method: "GET",
+          headers: {},
+        })
+          .then((response) => {
+            response.arrayBuffer().then(function (buffer) {
+              const url = window.URL.createObjectURL(new Blob([buffer]));
+              const link = document.createElement("a");
+              link.href = url;
+              link.setAttribute("download", "image.png"); //or any other extension
+              document.body.appendChild(link);
+              link.click();
+            });
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      
   };
 
   return (
@@ -78,33 +99,38 @@ const ImageModal = ({ imageUrl, altText, onClose }) => {
                   </div>
                  </div> 
               </div>
-              <button className='download_btn' onClick={handleDownload}>Download</button>
+              
+              <a href={webformatURL} download onClick={(e) => handleDownload(e)} className='download_btn'>
+                Download for free!
+              </a>
             </div>
             <div className='image_information'>
               <p className='container_heading'>Information</p>
+              <div className='img_container'>
               <div className='image_info'>
                  <p className='img_info_heading'>User</p>
                  <p className='img_info_response'>{imgDetails?.user}</p>
               </div>
               <div className='image_info'>
-                 <p className='img_info_heading'>User</p>
+                 <p className='img_info_heading'>Likes</p>
                  <p className='img_info_response'>{imgDetails?.likes}</p>
               </div>
               <div className='image_info'>
-                 <p className='img_info_heading'>User</p>
-                 <p className='img_info_response'>{imgDetails?.user}</p>
+                 <p className='img_info_heading'>Downloads</p>
+                 <p className='img_info_response'>{imgDetails?.downloads}</p>
               </div>
               <div className='image_info'>
-                 <p className='img_info_heading'>User</p>
-                 <p className='img_info_response'>{imgDetails?.user}</p>
+                 <p className='img_info_heading'>Views</p>
+                 <p className='img_info_response'>{imgDetails?.views}</p>
               </div>
               <div className='image_info'>
-                 <p className='img_info_heading'>User</p>
-                 <p className='img_info_response'>{imgDetails?.user}</p>
+                 <p className='img_info_heading'>Type</p>
+                 <p className='img_info_response'>{imgDetails?.type}</p>
               </div>
               <div className='image_info'>
-                 <p className='img_info_heading'>User</p>
-                 <p className='img_info_response'>{imgDetails?.user}</p>
+                 <p className='img_info_heading'>User ID</p>
+                 <p className='img_info_response'>{imgDetails?.user_id}</p>
+              </div>
               </div>
             </div>
           </section>
