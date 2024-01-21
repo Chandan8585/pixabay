@@ -8,7 +8,7 @@
 }
 .home{
     width: 100vw;
-    height: 250vh;
+    height: 400vh;
     padding: 2%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -49,4 +49,11 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    height: 300vh;
+    background-color: white;
+  }
+   .carousel_container{
+    width: 100vh;
+    
+    margin-left: 23rem;
   }

@@ -5,6 +5,12 @@ export const searchedImageReducer= (state, { type, payload }) => {
           ...state,
           searchedValue:payload
         }
+      case "IMAGE_CATEGORY":
+            return{
+              ...state,
+              imgCategory:payload
+            }
+    
       default:
         return state;
     }

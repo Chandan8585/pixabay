@@ -103,7 +103,7 @@ padding: 1% 5%;
   .image_information{
 
     width: 50%;
-    border: 2px solid black;
+    
   }
   .container_heading{
        font-size: 2rem;
@@ -119,16 +119,30 @@ padding: 1% 5%;
 .close{
     color: black
 }
-.img_info{
-    
+.image_info{
+ margin: 5px;
+ display: grid;
+
+ /* grid-template-rows: ; */
+}
+.image_information{
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    width: 100%;
 }
 .img_info_heading{
-    font-weight: 600;
-    font-size: 1.5rem;
+    font-weight: 800;
+    font-size: 1rem;
     color: black;
 }
 .img_info_response{
- font-weight: 400;
+ font-weight: 700;
  color: black;
  font-size: 1rem;
+}
+.img_container{
+  
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    object-fit: cover;
 }
