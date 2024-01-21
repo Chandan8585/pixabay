@@ -17,7 +17,7 @@ const Navbar = () => {
   }
 
   useEffect(() => {
-    // Read user information from localStorage
+  
     const storedToken = localStorage.getItem("token");
     const storedUserName = localStorage.getItem("userName");
 
