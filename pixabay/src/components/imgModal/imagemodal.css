@@ -119,3 +119,16 @@ padding: 1% 5%;
 .close{
     color: black
 }
+.img_info{
+    
+}
+.img_info_heading{
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: black;
+}
+.img_info_response{
+ font-weight: 400;
+ color: black;
+ font-size: 1rem;
+}
