@@ -8,7 +8,7 @@ github.com/Chandan8585/pixabay/assets/92000681/5e08c67f-81dc-41f4-ae25-8338c25af
 
 
 # Pixabay 
- <img src="./src/assets/homeImage.png" alt="App Screenshot" width="200" background-color="#fff"/>
+ <img src="./src/assets/hoemImage.png" alt="App Screenshot" width="200" background-color="#fff"/>
 .
 
 
@@ -30,7 +30,7 @@ github.com/Chandan8585/pixabay/assets/92000681/5e08c67f-81dc-41f4-ae25-8338c25af
 
 - On the homepage, you will find the list of all the Images that were listed on the web app by hosts from all around the country. You can choose from various categories listed.
 
- <img src="./src/assets/Homepage.png" alt="Homepage Screenshot" background-color="#fff"/>
+ <img src="./src/assets/Hoempage.png" alt="Homepage Screenshot" background-color="#fff"/>
 
 # All The Pages
 - Individual Image Modal, here you'll find images for your need that select from small, medium, big and original images to download.
