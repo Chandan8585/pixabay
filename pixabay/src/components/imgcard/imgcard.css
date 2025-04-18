@@ -1,32 +1,98 @@
 .image-card {
-    position: relative;
-    margin-bottom: 15px;
-  }
-  
-  .image {
-    width: 100%;
-    display: block;
-    border-radius: 8px;
-  }
-  
-  .tags {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 8px;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 0 0 8px 8px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  
-  .tag {
-    color: #fff;
-    font-size: 12px;
-    background: #333;
-    padding: 4px 8px;
-    border-radius: 4px;
-  }
-  
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  margin: 15px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.image-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.image-card:hover .image {
+  transform: scale(1.05);
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  padding: 15px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-card:hover .image-overlay {
+  opacity: 1;
+}
+
+.stats {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.photographer {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.tags-container {
+  padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background-color: #f0f2f5;
+  color: #4a4a4a;
+  border-radius: 16px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  background-color: #e1e4e8;
+}
+
+.tag-more {
+  background-color: #e3f2fd;
+  color: #1976d2;
+  border-radius: 16px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+}

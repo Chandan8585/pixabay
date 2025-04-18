@@ -50,7 +50,7 @@
     justify-content: center;
     flex-wrap: wrap;
     height: 300vh;
-    background-color: white;
+    /* background-color: white; */
   }
    .carousel_container{
     width: 100vh;
