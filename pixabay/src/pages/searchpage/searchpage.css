@@ -8,7 +8,7 @@
 }
 .home{
     width: 100vw;
-    height: 400vh;
+    min-height: 100vh;
     padding: 2%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -49,7 +49,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    height: 300vh;
+    /* height: 300vh; */
     /* background-color: white; */
   }
    .carousel_container{

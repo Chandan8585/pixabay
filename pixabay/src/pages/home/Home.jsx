@@ -14,7 +14,6 @@ const Home = () => {
     const { data: images, loading, error, loadMore, hasMore, updateUrl } = useFetch("&image_type=photo&per_page=10");
     const observer = useRef();
 
-    // Infinite scroll observer
     const lastImageElementRef = useCallback(node => {
         if (loading) return;
         if (observer.current) observer.current.disconnect();
@@ -29,7 +28,6 @@ const Home = () => {
     }, [loading, hasMore]);
 
     const handleSearch = (query) => {
-        // Update the URL with the new search query
         updateUrl(`&q=${query}&image_type=photo&per_page=10`);
     };
 
@@ -46,7 +44,7 @@ const Home = () => {
             </div>
             
             <div className='carousel_container'>
-                <CarouselContainer/>
+                <CarouselContainer />
             </div>
             
             <section className='image_section'>

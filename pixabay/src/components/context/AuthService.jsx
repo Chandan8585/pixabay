@@ -1,30 +1,26 @@
 import axios from 'axios'
-// import { useAuth } from '../context/authContext';
-
 
 export const LoginHandler = async (email, password) => {
-    // const {authDispatch } = useAuth();
-    console.log(email, password);
     try { 
-
-        const response = await axios.post("https://wicked-plum-sea-urchin.cyclic.cloud/auth/login", {
+        const response = await axios.post("https://menu-api-zps1.vercel.app/login", {
             email: email,
             password: password 
         });
-        // console.log("response", response.data.accessToken);
-        const token = response.data.accessToken;  
-        const userName = response.data.userName;
-        // console.log("token",token)      ;
-        if(response.status === 200){
-            // console.log(token)
+        
+        console.log("Full response:", response); 
+        
+        if(response.status === 200 && response.data.data?.token){
+            const token = response.data.data.token;  
+            const userName = response.data.data.firstName;
+            
             localStorage.setItem("token", token);
             localStorage.setItem("userName", userName);
-            return token;  
+            
+            return { token, userName }; 
         }
+        throw new Error("Invalid response format");
     } catch (error) {
-        console.log(error);
+        console.error("Login error:", error.response?.data || error.message);
+        throw error; 
     }
-
 };
-
-

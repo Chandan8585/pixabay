@@ -83,3 +83,71 @@
 }
 
   
+/* Success Popup Styles */
+.success-popup {
+  position: fixed;
+  top: 20%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 1000;
+  max-width: 400px;
+  width: 90%;
+}
+
+.success-icon {
+  width: 60px;
+  height: 60px;
+  background: #4BB543;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.success-icon svg {
+  width: 30px;
+  height: 30px;
+  color: white;
+}
+
+.success-popup h3 {
+  color: #4BB543;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.success-popup p {
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.progress-bar {
+  height: 4px;
+  background: #e0e0e0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-bar div {
+  height: 100%;
+  background: #4BB543;
+}
+
+/* Overlay effect */
+.success-popup::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+ 
+  z-index: -1;
+}

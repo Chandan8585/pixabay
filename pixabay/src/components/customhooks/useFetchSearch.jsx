@@ -4,7 +4,7 @@ import { useSearchedImage } from "../context/SearchContext";
 
 
 const useFetch = (url , searchValue) => {
-   const {searchValue} = useSearchedImage();
+//    const {searchValue} = useSearchedImage();
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(null);
     const [error, setError] = useState(null);

@@ -16,19 +16,17 @@ const useFetch = (initialUrl) => {
         setError(null);
 
         try {
-            // Construct the URL with pagination
             const apiUrl = `${url}&page=${isNewSearch ? 1 : page}`;
             const res = await fetchImagesFromApi(apiUrl);
             
             if (isNewSearch) {
                 setData(res?.hits || []);
-                setPage(2); // Reset to page 2 after new search
+                setPage(2); 
             } else {
                 setData(prevData => [...prevData, ...(res?.hits || [])]);
                 setPage(prevPage => prevPage + 1);
             }
 
-            // Pixabay returns maximum 500 images (page 1-50 with per_page=10)
             setHasMore(res?.hits?.length > 0 && (isNewSearch ? true : page * 10 < 500));
         } catch (err) {
             setError("Something went wrong!");
@@ -37,19 +35,16 @@ const useFetch = (initialUrl) => {
         }
     }, [url, page, hasMore]);
 
-    // Function to load more data
     const loadMore = useCallback(() => {
         if (!loading && hasMore) {
             fetchData();
         }
     }, [loading, hasMore, fetchData]);
 
-    // Function to update URL for new searches
     const updateUrl = useCallback((newUrl) => {
         setUrl(newUrl);
     }, []);
 
-    // Initial fetch or fetch when URL changes
     useEffect(() => {
         if (url) {
             fetchData(true);

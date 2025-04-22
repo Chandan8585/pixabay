@@ -14,7 +14,7 @@ const SearchedImageProvider = ({ children }) => {
   );
   return (
     <SearchedImageContext.Provider
-      value={{ searchedValue,imgCategory,searchedDispatch }}
+      value={{ searchedValue, imgCategory ,searchedDispatch }}
     >
       {children}
     </SearchedImageContext.Provider>

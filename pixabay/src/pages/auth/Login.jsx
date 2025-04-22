@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Auth.css"
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../components/context/AuthContext';
@@ -7,23 +7,30 @@ import { LoginHandler } from '../../components/context/AuthService';
 
 const Login = () => {
     const navigate = useNavigate();  
+    const [forceUpdate, setForceUpdate] = useState(false);
     const { email, password, authDispatch } = useAuth();
     console.log("username",email, password, authDispatch );
- const handleLoginClick= (event)=> {
-          event.preventDefault();
-          const token = LoginHandler(email, password);
-          console.log("token", token);
+ 
+    const handleLoginClick = async (event) => {
+      event.preventDefault(); // Crucial for form handling
+      console.log("Attempting login with:", email, password);
+      
+      try {
+          const token = await LoginHandler(email, password);
+          console.log("Received token:", token); // Debug log
+          
           if(token){
-            navigate("/")
+              authDispatch({
+                  type: "TOKEN",
+                  payload: token
+              });
+              navigate("/");
           }
-          authDispatch({
-            type: "TOKEN",
-            payload: token
-          })
-          authDispatch({
-            type: "CLEAR_CREDENTIALS"
-          })
- }
+      } catch (error) {
+          console.error("Login failed:", error);
+          // Here you could set error state to show to user
+      }
+  };
  const handleEmailChange = (event)=> {
          authDispatch({
             type: "EMAIL",
@@ -36,18 +43,22 @@ const Login = () => {
             payload: event.target.value
          })
  }
- const handleTestCredentialsClick = ()=> {
-      const token = LoginHandler("pratapchandan207@gmail.com", "Abcd@123");
-      authDispatch({
-        type: "TOKEN",
-        payload: token
-      })
+ const handleTestCredentialsClick = async () => {  
+  try {
+      const token = await LoginHandler("pratapchandan207@gmail.com", "Abcd@123");
+      
       if(token){
-        navigate("/");
-
+          authDispatch({
+              type: "TOKEN",
+              payload: token
+          });
+          setForceUpdate(prev => !prev);  // Force update
+          navigate("/");
       }
-     
- }
+  } catch (error) {
+      console.error("Test login failed:", error);
+  }
+};
   return (
     <div className="d-grid">
     <div className="login-auth d-flex direction-column justify-center">
